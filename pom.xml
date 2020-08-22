@@ -12,11 +12,11 @@
     <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <quarkus-plugin.version>1.7.0.Final</quarkus-plugin.version>
+    <quarkus-plugin.version>1.6.1.Final</quarkus-plugin.version>
     <quarkus.platform.artifact-id>quarkus-universe-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-    <quarkus.platform.version>1.7.0.Final</quarkus.platform.version>
-    <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
+    <quarkus.platform.version>1.6.1.Final</quarkus.platform.version>
+    <surefire-plugin.version>2.22.1</surefire-plugin.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -33,6 +33,23 @@
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-resteasy</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-rest-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-smallrye-openapi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-smallrye-fault-tolerance</artifactId>
+    </dependency>
+    <dependency>
+     <groupId>io.smallrye</groupId>
+     <artifactId>smallrye-context-propagation-propagators-rxjava2</artifactId>
+     <version>1.0.7</version>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -60,6 +77,18 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-infinispan-client</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.kie.kogito</groupId>
+      <artifactId>kogito-events-reactive-messaging-addon</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-container-image-docker</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-smallrye-reactive-messaging-kafka</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -70,8 +99,6 @@
         <executions>
           <execution>
             <goals>
-              <goal>prepare</goal>
-              <goal>prepare-tests</goal>
               <goal>build</goal>
             </goals>
           </execution>

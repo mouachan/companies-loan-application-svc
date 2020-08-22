@@ -17,13 +17,17 @@ package org.redhat.notation;
 
 public class NoteApplication {
 
-
+  
 	private Bilan bilan;
-	private boolean noted;
-	
+    private Notation notation;
+    
+    
+    public NoteApplication(){
+
+    }
+
 	public NoteApplication(Bilan bilan, boolean noted) {
 		this.bilan = bilan;
-		this.noted = noted;
 	}
 
 
@@ -41,25 +45,24 @@ public class NoteApplication {
         this.bilan = bilan;
     }
 
-    /**
-     * @return boolean return the noted
-     */
-    public boolean isNoted() {
-        return noted;
-    }
-
-    /**
-     * @param noted the noted to set
-     */
-    public void setNoted(boolean noted) {
-        this.noted = noted;
-    }
 
 	@Override
 	public String toString() {
-		return "NoteApplication [bilan=" + bilan + ", noted=" + noted + "]";
+		return "NoteApplication [ bilan=" + bilan + "]";
 	}
 
-	
+    /**
+     * @return Notation return the notation
+     */
+    public Notation getNotation() {
+        return notation;
+    }
+
+    /**
+     * @param notation the notation to set
+     */
+    public void setNotation(Notation notation) {
+        this.notation = notation;
+    }
 
 }

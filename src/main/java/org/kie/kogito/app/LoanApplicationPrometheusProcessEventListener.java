@@ -25,16 +25,16 @@ import io.prometheus.client.Counter;
 
 public class LoanApplicationPrometheusProcessEventListener extends PrometheusProcessEventListener {
 	
-	protected final Counter numberOfVisaApplicationsApproved = Counter.build()
-            .name("acme_travels_visas_approved_total")
-            .help("Approved visa applications")
-            .labelNames("app_id", "country", "duration", "nationality")
+	protected final Counter numberOfLoanApplicationsApproved = Counter.build()
+            .name("companies_loan_approved_total")
+            .help("Approved loan applications")
+            .labelNames("app_id", "duration")
             .register();
 	
-	protected final Counter numberOfVisaApplicationsRejected = Counter.build()
-            .name("acme_travels_visas_rejected_total")
-            .help("Rejected visa applications")
-            .labelNames("app_id", "country", "duration", "nationality")
+	protected final Counter numberOfLoanApplicationsRejected = Counter.build()
+            .name("companies_loan_rejected_total")
+            .help("Rejected loan applications")
+            .labelNames("app_id", "duration")
             .register();
 
 	private String identifier;
@@ -45,8 +45,8 @@ public class LoanApplicationPrometheusProcessEventListener extends PrometheusPro
 	}
 	
 	public void cleanup() {
-		CollectorRegistry.defaultRegistry.unregister(numberOfVisaApplicationsApproved);
-		CollectorRegistry.defaultRegistry.unregister(numberOfVisaApplicationsRejected);
+		CollectorRegistry.defaultRegistry.unregister(numberOfLoanApplicationsApproved);
+		CollectorRegistry.defaultRegistry.unregister(numberOfLoanApplicationsRejected);
 	}
 
 	@Override
@@ -54,16 +54,16 @@ public class LoanApplicationPrometheusProcessEventListener extends PrometheusPro
 		super.afterProcessCompleted(event);
 		final WorkflowProcessInstanceImpl processInstance = (WorkflowProcessInstanceImpl) event.getProcessInstance();
 		
-		if (processInstance.getProcessId().equals("NoteApplications")) {
-			NoteApplication application = (NoteApplication) processInstance.getVariable("NoteApplication");
+	/*	if (processInstance.getProcessId().equals("NoteApplications")) {
+			NoteApplication application = (NoteApplication) processInstance.getVariable("noteapplication");
 		
 			if (application.isApproved()) {
-				numberOfVisaApplicationsApproved.labels(identifier, safeValue(application.getCountry()), String.valueOf(application.getDuration()), safeValue(application.getNationality())).inc();
+				numberOfLoanApplicationsApproved.labels(identifier, safeValue(application.get), String.valueOf(application.getDuration()), safeValue(application.getNationality())).inc();
 			} else {
-				numberOfVisaApplicationsRejected.labels(identifier, safeValue(application.getCountry()), String.valueOf(application.getDuration()), safeValue(application.getNationality())).inc();
+				numberOfLoanApplicationsRejected.labels(identifier, safeValue(application.getCountry()), String.valueOf(application.getDuration()), safeValue(application.getNationality())).inc();
 			}
 		
-		}
+		}*/
 	}
 
 	protected String safeValue(String value) {

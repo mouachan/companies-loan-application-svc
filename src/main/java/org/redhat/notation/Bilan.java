@@ -12,6 +12,10 @@ public class Bilan {
 	private String dl;
 	private String ee;
 
+
+    public Bilan(){
+        
+    }
     /**
      * @return String return the siren
      */
