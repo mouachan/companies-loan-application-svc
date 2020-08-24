@@ -17,7 +17,6 @@ package org.kie.kogito.app;
 
 import org.jbpm.workflow.instance.impl.WorkflowProcessInstanceImpl;
 import org.kie.kogito.monitoring.process.PrometheusProcessEventListener;
-import org.redhat.notation.NoteApplication;
 import org.kie.api.event.process.ProcessCompletedEvent;
 
 import io.prometheus.client.CollectorRegistry;
@@ -53,17 +52,6 @@ public class LoanApplicationPrometheusProcessEventListener extends PrometheusPro
 	public void afterProcessCompleted(ProcessCompletedEvent event) {
 		super.afterProcessCompleted(event);
 		final WorkflowProcessInstanceImpl processInstance = (WorkflowProcessInstanceImpl) event.getProcessInstance();
-		
-	/*	if (processInstance.getProcessId().equals("NoteApplications")) {
-			NoteApplication application = (NoteApplication) processInstance.getVariable("noteapplication");
-		
-			if (application.isApproved()) {
-				numberOfLoanApplicationsApproved.labels(identifier, safeValue(application.get), String.valueOf(application.getDuration()), safeValue(application.getNationality())).inc();
-			} else {
-				numberOfLoanApplicationsRejected.labels(identifier, safeValue(application.getCountry()), String.valueOf(application.getDuration()), safeValue(application.getNationality())).inc();
-			}
-		
-		}*/
 	}
 
 	protected String safeValue(String value) {

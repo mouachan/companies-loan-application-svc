@@ -15,41 +15,18 @@
  */
 package org.redhat.notation;
 
-public class NoteApplication {
+public class Result {
 
   
-	private Bilan bilan;
     private Notation notation;
+    private String msg;
     
-    
-    public NoteApplication(){
+    public Result(){
 
     }
 
-	public NoteApplication(Bilan bilan, boolean noted) {
-		this.bilan = bilan;
-	}
 
 
-    /**
-     * @return Bilan return the bilan
-     */
-    public Bilan getBilan() {
-        return bilan;
-    }
-
-    /**
-     * @param bilan the bilan to set
-     */
-    public void setBilan(Bilan bilan) {
-        this.bilan = bilan;
-    }
-
-
-	@Override
-	public String toString() {
-		return "NoteApplication [ bilan=" + bilan + "]";
-	}
 
     /**
      * @return Notation return the notation
@@ -64,5 +41,27 @@ public class NoteApplication {
     public void setNotation(Notation notation) {
         this.notation = notation;
     }
+
+    /**
+     * @return String return the msg
+     */
+    public String getMsg() {
+        return msg;
+    }
+
+    /**
+     * @param msg the msg to set
+     */
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+
+
+
+	@Override
+	public String toString() {
+		return "Result [msg=" + msg + ", notation=" + notation + "]";
+	}
 
 }
