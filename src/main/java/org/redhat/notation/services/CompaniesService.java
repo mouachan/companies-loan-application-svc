@@ -20,7 +20,6 @@ public class CompaniesService {
 
     @Fallback(fallbackMethod = "missingCompany")
     public boolean get(String siren) {
-        System.out.println("calling service");
         return companiesRemoteService.get(siren);
     }
     
@@ -28,7 +27,4 @@ public class CompaniesService {
         return false;
     }
 
-    public List<Notation> add(Notation notation){
-        return companiesRemoteService.add(notation);
-    }
 }

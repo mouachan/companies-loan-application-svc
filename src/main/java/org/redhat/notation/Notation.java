@@ -103,9 +103,6 @@ public class Notation {
                  this.setScore(((BigDecimal)map.get(key)).doubleValue());
             else if(key.equals("Orientation"))
                  this.setOrientation((String)map.get(key));
-      
-
-
 
         }
 

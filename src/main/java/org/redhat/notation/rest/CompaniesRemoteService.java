@@ -14,6 +14,7 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import org.redhat.notation.Notation;
 
 
+
 @Path("/")
 @RegisterRestClient
 public interface CompaniesRemoteService {
@@ -22,9 +23,6 @@ public interface CompaniesRemoteService {
     @Produces("application/json")
     boolean get(@PathParam("siren") String siren);
 
-    @POST
-    @Path("/notation/add")
-    @Produces("application/json")
-    List<Notation> add(@PathParam("notation")Notation notation);
+   
 
 }
