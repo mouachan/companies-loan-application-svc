@@ -2,22 +2,22 @@ package org.redhat.notation;
 
 public class Bilan {
     private String siren;
-	private String gg;
-	private String ga;
-	private String hp;
-	private String hq;
-	private String hn;
-	private String fl;
-	private String fm;
-	private String dl;
-	private String ee;
+	private double gg;
+	private double ga;
+	private double hp;
+	private double hq;
+	private double hn;
+	private double fl;
+	private double fm;
+	private double dl;
+	private double ee;
 
 
     public Bilan(){
         
     }
     /**
-     * @return String return the siren
+     * @return double return the siren
      */
     public String getSiren() {
         return siren;
@@ -31,128 +31,128 @@ public class Bilan {
     }
 
     /**
-     * @return String return the gg
+     * @return double return the gg
      */
-    public String getGg() {
+    public double getGg() {
         return gg;
     }
 
     /**
      * @param gg the gg to set
      */
-    public void setGg(String gg) {
+    public void setGg(double gg) {
         this.gg = gg;
     }
 
     /**
-     * @return String return the ga
+     * @return double return the ga
      */
-    public String getGa() {
+    public double getGa() {
         return ga;
     }
 
     /**
      * @param ga the ga to set
      */
-    public void setGa(String ga) {
+    public void setGa(double ga) {
         this.ga = ga;
     }
 
     /**
-     * @return String return the hp
+     * @return double return the hp
      */
-    public String getHp() {
+    public double getHp() {
         return hp;
     }
 
     /**
      * @param hp the hp to set
      */
-    public void setHp(String hp) {
+    public void setHp(double hp) {
         this.hp = hp;
     }
 
     /**
-     * @return String return the hq
+     * @return double return the hq
      */
-    public String getHq() {
+    public double getHq() {
         return hq;
     }
 
     /**
      * @param hq the hq to set
      */
-    public void setHq(String hq) {
+    public void setHq(double hq) {
         this.hq = hq;
     }
 
     /**
-     * @return String return the hn
+     * @return double return the hn
      */
-    public String getHn() {
+    public double getHn() {
         return hn;
     }
 
     /**
      * @param hn the hn to set
      */
-    public void setHn(String hn) {
+    public void setHn(double hn) {
         this.hn = hn;
     }
 
     /**
-     * @return String return the fl
+     * @return double return the fl
      */
-    public String getFl() {
+    public double getFl() {
         return fl;
     }
 
     /**
      * @param fl the fl to set
      */
-    public void setFl(String fl) {
+    public void setFl(double fl) {
         this.fl = fl;
     }
 
     /**
-     * @return String return the fm
+     * @return double return the fm
      */
-    public String getFm() {
+    public double getFm() {
         return fm;
     }
 
     /**
      * @param fm the fm to set
      */
-    public void setFm(String fm) {
+    public void setFm(double fm) {
         this.fm = fm;
     }
 
     /**
-     * @return String return the dl
+     * @return double return the dl
      */
-    public String getDl() {
+    public double getDl() {
         return dl;
     }
 
     /**
      * @param dl the dl to set
      */
-    public void setDl(String dl) {
+    public void setDl(double dl) {
         this.dl = dl;
     }
 
     /**
-     * @return String return the ee
+     * @return double return the ee
      */
-    public String getEe() {
+    public double getEe() {
         return ee;
     }
 
     /**
      * @param ee the ee to set
      */
-    public void setEe(String ee) {
+    public void setEe(double ee) {
         this.ee = ee;
     }
 
@@ -162,8 +162,8 @@ public class Bilan {
 				+ hn + ", hp=" + hp + ", hq=" + hq + ", siren=" + siren + "]";
 	}
 
-	public Bilan(String siren, String gg, String ga, String hp, String hq, String hn, String fl, String fm, String dl,
-			String ee) {
+	public Bilan(String siren, double gg, double ga, double hp, double hq, double hn, double fl, double fm, double dl,
+			double ee) {
 		this.siren = siren;
 		this.gg = gg;
 		this.ga = ga;
