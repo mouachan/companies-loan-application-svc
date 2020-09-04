@@ -1,6 +1,6 @@
-package org.redhat.notation;
+package org.redhat.model;
 
-public class LoanValidation {
+public class Loan {
 
     private String siren;
     private double ca;
@@ -10,9 +10,10 @@ public class LoanValidation {
     private String typeProjet;
     private double amount;
     private Notation notation;
-    private boolean elligible;
+    private boolean eligible = false;
     private String msg;
-	public LoanValidation() {
+    private Bilan bilan;
+	public Loan() {
 	}
     
 
@@ -131,24 +132,24 @@ public class LoanValidation {
 
 	@Override
 	public String toString() {
-		return "LoanValidation [age=" + age + ", amount=" + amount + ", ca=" + ca + ", nbEmployees=" + nbEmployees
-				+ ", notation=" + notation + ", publicSupport=" + publicSupport + ", siren=" + siren + ", typeProjet="
-				+ typeProjet + "]";
+		return "Loan [age=" + age + ", amount=" + amount + ", bilan=" + bilan + ", ca=" + ca + ", elligible="
+				+ eligible + ", msg=" + msg + ", nbEmployees=" + nbEmployees + ", notation=" + notation
+				+ ", publicSupport=" + publicSupport + ", siren=" + siren + ", typeProjet=" + typeProjet + "]";
 	}
 
 
     /**
-     * @return boolean return the elligible
+     * @return boolean return the eligible
      */
-    public boolean isElligible() {
-        return elligible;
+    public boolean isEligible() {
+        return eligible;
     }
 
     /**
-     * @param elligible the elligible to set
+     * @param elligible the eligible to set
      */
-    public void setElligible(boolean elligible) {
-        this.elligible = elligible;
+    public void setEligible(boolean eligible) {
+        this.eligible = eligible;
     }
 
     /**
@@ -163,6 +164,21 @@ public class LoanValidation {
      */
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+
+    /**
+     * @return Bilan return the bilan
+     */
+    public Bilan getBilan() {
+        return bilan;
+    }
+
+    /**
+     * @param bilan the bilan to set
+     */
+    public void setBilan(Bilan bilan) {
+        this.bilan = bilan;
     }
 
 }
